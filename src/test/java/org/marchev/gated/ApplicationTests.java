@@ -1,4 +1,4 @@
-package org.marchev;
+package org.marchev.gated;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

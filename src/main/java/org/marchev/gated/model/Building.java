@@ -1,4 +1,4 @@
-package org.marchev.model;
+package org.marchev.gated.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

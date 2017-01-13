@@ -1,4 +1,4 @@
-package org.marchev;
+package org.marchev.gated;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

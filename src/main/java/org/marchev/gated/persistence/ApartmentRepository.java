@@ -1,6 +1,6 @@
-package org.marchev.persistence;
+package org.marchev.gated.persistence;
 
-import org.marchev.model.Apartment;
+import org.marchev.gated.model.Apartment;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
