@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.time.LocalDate;
 
 @Entity
 public class Apartment {
@@ -16,6 +17,10 @@ public class Apartment {
     private int number;
 
     private String owner;
+
+    private LocalDate registrationDate;
+
+    private double monthlyRate;
 
     @ManyToOne(optional = false)
     private Building building;
@@ -52,4 +57,19 @@ public class Apartment {
         this.building = building;
     }
 
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public double getMonthlyRate() {
+        return monthlyRate;
+    }
+
+    public void setMonthlyRate(double monthlyRate) {
+        this.monthlyRate = monthlyRate;
+    }
 }
