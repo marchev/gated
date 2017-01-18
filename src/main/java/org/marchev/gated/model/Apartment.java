@@ -5,7 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Apartment {
@@ -24,6 +26,9 @@ public class Apartment {
 
     @ManyToOne(optional = false)
     private Building building;
+
+    @OneToMany
+    private List<Payment> payments;
 
     public long getId() {
         return id;
@@ -71,5 +76,9 @@ public class Apartment {
 
     public void setMonthlyRate(double monthlyRate) {
         this.monthlyRate = monthlyRate;
+    }
+
+    public List<Payment> getPayments() {
+        return payments;
     }
 }

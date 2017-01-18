@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Building {
@@ -15,6 +17,9 @@ public class Building {
     private String name;
 
     private int floorCount;
+
+    @OneToMany
+    private List<Apartment> apartments;
 
     public long getId() {
         return id;
@@ -40,4 +45,7 @@ public class Building {
         this.floorCount = floorCount;
     }
 
+    public List<Apartment> getApartments() {
+        return apartments;
+    }
 }
