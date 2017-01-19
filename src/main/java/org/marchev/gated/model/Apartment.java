@@ -27,7 +27,7 @@ public class Apartment {
     @ManyToOne(optional = false)
     private Building building;
 
-    @OneToMany
+    @OneToMany(mappedBy = "apartment")
     private List<Payment> payments;
 
     public long getId() {
@@ -80,5 +80,9 @@ public class Apartment {
 
     public List<Payment> getPayments() {
         return payments;
+    }
+
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
     }
 }
