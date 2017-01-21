@@ -1,75 +1,78 @@
 'use strict';
 
-// tag::vars[]
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Router from 'react-router/BrowserRouter'
+import Match from 'react-router/Match'
+import Link from 'react-router/Link'
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import client from './client';
 
-// tag::app[]
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
+
 class App extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {apartments: []};
+		// this.state = {apartments: []};
 	}
 
 	componentDidMount() {
-		client({method: 'GET', path: '/api/apartments'}).then(response => {
-			this.setState({apartments: response.entity._embedded.apartments});
-		});
+//		client({method: 'GET', path: '/api/apartments'}).then(response => {
+//			this.setState({apartments: response.entity._embedded.apartments});
+//		});
 	}
 
 	render() {
 		return (
-			<ApartmentList apartments={this.state.apartments}/>
+              <Router>
+                <div>
+                  <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/buildings">Buildings</Link></li>
+                    <li><Link to="/apartments">Apartments</Link></li>
+                    <li><Link to="/payments">Payments</Link></li>
+                  </ul>
+
+                  <hr/>
+
+                  <Match exactly pattern="/" component={Home} />
+                  <Match pattern="/buildings" component={Buildings} />
+                  <Match pattern="/apartments" component={Apartments} />
+                  <Match pattern="/payments" component={Payments} />
+                </div>
+              </Router>
 		)
 	}
 }
-// end::app[]
 
-// tag::apartment-list[]
-class ApartmentList extends React.Component {
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+)
 
-	render() {
-		var apartments = this.props.apartments.map(apartment =>
-			<Apartment key={apartment._links.self.href} apartment={apartment}/>
-		);
-		return (
-			<table>
-				<tbody>
-					<tr>
-						<th>Number</th>
-						<th>Owner</th>
-						<th>Registration Date</th>
-						<th>Monthly Rate</th>
-					</tr>
-					{apartments}
-				</tbody>
-			</table>
-		)
-	}
-}
-// end::apartment-list[]
+const Buildings = () => (
+  <div>
+    <h2>Buildings</h2>
+  </div>
+)
 
-// tag::apartment[]
-class Apartment extends React.Component {
+const Apartments = () => (
+  <div>
+    <h2>Apartments</h2>
+  </div>
+)
 
-	render() {
-		return (
-			<tr>
-				<td>{this.props.apartment.number}</td>
-				<td>{this.props.apartment.owner}</td>
-				<td>{this.props.apartment.registrationDate}</td>
-				<td>{this.props.apartment.monthlyRate}</td>
-			</tr>
-		)
-	}
-}
-// end::apartment[]
+const Payments = () => (
+  <div>
+    <h2>Payments</h2>
+  </div>
+)
 
-// tag::render[]
 ReactDOM.render(
     <App />,
-    document.getElementById('react')
+    document.querySelector('#root')
 )
-// end::render[]

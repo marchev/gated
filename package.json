@@ -9,13 +9,15 @@
   "bugs": {
     "url": "https://bitbucket.org/martomarchev/gated/issues"
   },
-  "homepage": "https://bitbucket.org/martomarchev/gated",
+  "homepage": "https://bitbucket.org/martomarchev/gated#readme",
   "author": "Martin Hristov",
   "license": "Apache-2.0",
-  "homepage": "https://bitbucket.org/martomarchev/gated#readme",
   "dependencies": {
+    "history": "^4.5.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-router": "^4.0.0-2",
+    "react-tap-event-plugin": "^2.0.1",
     "rest": "^2.0.0",
     "webpack": "^1.14.0"
   },
