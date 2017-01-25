@@ -1,25 +1,44 @@
 var path = require('path');
+var vue = require('vue-loader');
+var sourceRoot = path.join(__dirname, './src/main/js');
 
 module.exports = {
-    entry: './src/main/js/app.js',
+    entry: path.join(sourceRoot, 'app.js'),
     devtool: 'sourcemaps',
     cache: true,
-    debug: true,
     output: {
         path: __dirname,
         filename: './src/main/resources/static/app.dist.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
-                test: path.join(__dirname, '.'),
-                exclude: /(node_modules)/,
-                loader: 'babel',
-                query: {
-                    cacheDirectory: true,
-                    presets: ['es2015', 'react']
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        'scss': 'vue-style-loader!css-loader!sass-loader',
+                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+                    }
+                }
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]?[hash]'
                 }
             }
         ]
-    }
+    },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.common.js'
+        }
+    },
 };
