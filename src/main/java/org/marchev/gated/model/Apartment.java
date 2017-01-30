@@ -9,9 +9,6 @@ import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- * Some dummy Javadoc.
- */
 @Entity
 public class Apartment {
 
