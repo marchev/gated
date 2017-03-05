@@ -1,6 +1,16 @@
 engines:
   checkstyle:
     enabled: true
+    channel: beta
     checks:
       com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck:
         enabled: false
+  fixme:
+    enabled: true
+  pmd:
+    enabled: true
+    channel: beta
+ratings:
+  paths:
+  - "**.java"
+exclude_paths: []
