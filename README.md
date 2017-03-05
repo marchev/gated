@@ -1,29 +1,11 @@
-# gated #
+# gated # [![Build Status](https://travis-ci.org/marchev/gated.svg?branch=master)](https://travis-ci.org/marchev/gated)
 
-This README would normally document whatever steps are necessary to get your application up and running.
+**gated** is a simple gated community payments management app. The main goals of this project are:
+* Build an open-source tool for managing gated community monthly payments.
+* Try out new and interesting technologies.
 
-### What is this repository for? ###
+### Technologies & tools ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Spring Boot
+* Vue.js
+* Heroku
