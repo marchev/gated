@@ -25,6 +25,10 @@ repositories {
 	mavenCentral()
 }
 
+plugins {
+	id 'jacoco'
+	id 'com.github.kt3k.coveralls' version '2.6.3'
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -40,4 +44,11 @@ dependencies {
 
 bootRun {
     addResources = true
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled = true
+		html.enabled = true
+	}
 }
