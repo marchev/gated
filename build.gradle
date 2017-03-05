@@ -10,6 +10,11 @@ buildscript {
 	}
 }
 
+plugins {
+	id 'jacoco'
+	id 'com.github.kt3k.coveralls' version '2.6.3'
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -23,11 +28,6 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
-}
-
-plugins {
-	id 'jacoco'
-	id 'com.github.kt3k.coveralls' version '2.6.3'
 }
 
 dependencies {
