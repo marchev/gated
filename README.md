@@ -1,6 +1,6 @@
 # gated
 
-[![Build Status](https://travis-ci.org/marchev/gated.svg?branch=master)](https://travis-ci.org/marchev/gated) [![Coverage Status](https://coveralls.io/repos/github/marchev/gated/badge.svg?branch=master)](https://coveralls.io/github/marchev/gated?branch=master)
+[![Travis](https://img.shields.io/travis/marchev/gated.svg)]() [![Coveralls](https://img.shields.io/coveralls/marchev/gated.svg)]()
 
 **gated** is a simple gated community payments management app. The main goals of this project are:
 * Build an open-source tool for managing gated community monthly payments.
