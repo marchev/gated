@@ -1,6 +1,6 @@
 # gated
 
-[![Travis](https://img.shields.io/travis/marchev/gated.svg)]() [![Coveralls](https://img.shields.io/coveralls/marchev/gated.svg)]()
+[![Travis](https://img.shields.io/travis/marchev/gated.svg)]() [![Coveralls](https://img.shields.io/coveralls/marchev/gated.svg)]() [![Code Climate](https://img.shields.io/codeclimate/issues/github/marchev/gated.svg)]()
 
 **gated** is a simple gated community payments management app. The main goals of this project are:
 * Build an open-source tool for managing gated community monthly payments.
