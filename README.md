@@ -11,7 +11,3 @@
 * Spring Boot
 * Vue.js
 * Heroku
-
-### Links ###
-
-* CI: 
